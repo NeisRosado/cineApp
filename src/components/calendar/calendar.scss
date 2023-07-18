@@ -1,0 +1,62 @@
+
+.calendar-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    span {
+        opacity: 1;
+        font-family: Roboto;
+        color: #BDC1CAFF;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    input {
+        height: 30px;
+        padding-left: 12px;
+        padding-right: 34px;
+        font-family: Roboto;
+        font-size: 14px;
+        background: #69656500;
+        border-radius: 6px;
+        border-width: 1px;
+        border-color: #565D6DFF;
+        outline: none;
+    }
+
+    .react-datepicker {
+        border: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        font-family: Arial, sans-serif;
+
+        &__header {
+            background-color: #f0f0f0;
+            border-bottom: none;
+            text-align: center;
+            padding: 10px;
+
+            &__current-month {
+                font-size: 18px;
+            }
+        }
+
+        &__navigation {
+            top: 20px;
+
+            &--previous {
+                left: 20px;
+            }
+
+            &--next {
+                right: 20px;
+            }
+        }
+
+        &__input-container {
+            input {
+                color: #ffffff;
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+/* DropdownCinemas.scss */
+.cinemas {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    span {
+        opacity: 1;
+        font-family: Roboto;
+        color: #BDC1CAFF;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    select {
+        height: 30px;
+        padding-left: 12px;
+        padding-right: 34px;
+        font-family: Roboto;
+        font-size: 14px;
+        background: #69656500;
+        border-radius: 6px;
+        border-width: 1px;
+        border-color: #565D6DFF;
+        outline: none;
+        color: #ffffff;
+   
+    }
+
+
+}
