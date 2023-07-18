@@ -6,6 +6,9 @@ button {
   height: 37px; 
   background: #1C508DFF; 
   border-radius: 19px;  
+  border: none ;
+  margin: 1px 5px;
+  padding: 5px 10px;
 }
 
 .text {
@@ -15,5 +18,8 @@ button {
     font-size: 14px; 
     line-height: 22px; 
     color: #FFFFFFFF; 
+    font-weight: 100;
+    letter-spacing: 1px;
+    
 
 }

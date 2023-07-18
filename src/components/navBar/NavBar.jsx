@@ -25,11 +25,10 @@ const NavBar = () => {
         <img className='navBar__logo__img' src="/src/assets/logo.png" alt="Logo Cine Colombia" />
         <span className='navBar__logo__text' >CINE COLOMBIA</span>
       </figure>
-      <Buttons />
+      <Buttons className='navBar__buttons' />
       <Cinemas />
       <Calendar />
       <img src="/src/assets/avatar.png" className='navBar__avatar' alt="avatar usuario" />
-      {/* <List list= {listasDesplegables} className="navBar__list" /> */}
     </nav>
   )
 }
