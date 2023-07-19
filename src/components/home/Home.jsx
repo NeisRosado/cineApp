@@ -1,17 +1,23 @@
-import React from 'react'
-import Header from '../header/Header'
-import Main from '../main/Main'
-import Footer from '../footer/Footer'
-import "./home.scss"
+import React, { useState } from 'react';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
+import "./home.scss";
+import Main from '../main/Main';
 
 const Home = () => {
-  return (
-<>
-<Header />
-<Main />
-<Footer />
-</>
-  )
-}
+  const [selectedGenre, setSelectedGenre] = useState(null);
 
-export default Home
+  const handleGenreClick = (genre) => {
+    setSelectedGenre(genre);
+  };
+
+  return (
+    <>
+      <Header onGenreClick={handleGenreClick} />
+      <Main selectedGenre={selectedGenre} />
+      <Footer />
+    </>
+  );
+};
+
+export default Home;

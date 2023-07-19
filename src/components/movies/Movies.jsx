@@ -1,7 +1,7 @@
 import React from 'react';
 import './movies.scss';
 
-const Movies = ({ movie, genres }) => {
+const Movies = ({ movie, genres, selectedGenre }) => {
   const { poster_path, original_title, title, release_date, genre_ids, adult } = movie;
 
   const getGenreNames = (genreIds) => {
@@ -22,6 +22,7 @@ const Movies = ({ movie, genres }) => {
           <span className="movies__content__text__span">Estreno: {release_date}</span>
           <span className="movies__content__text__span">Género: {getGenreNames(genre_ids)}</span>
           <span className="movies__content__text__container">Recomendada: {adult ? 'Para adultos' : 'Apta para todos'}</span>
+          {selectedGenre && !genre_ids.includes(selectedGenre) && <span className="movies__content__text__container">No se encuentra en el género seleccionado</span>}
         </div>
       </div>
     </figure>
@@ -29,5 +30,4 @@ const Movies = ({ movie, genres }) => {
 };
 
 export default Movies;
-
 
