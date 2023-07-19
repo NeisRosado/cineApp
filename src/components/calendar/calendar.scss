@@ -1,6 +1,7 @@
+@import "/src/assets/styles/universals.scss";
+@import "/src/assets/styles/variables.scss";
 
 .calendar-container {
-    position: relative;
     display: flex;
     flex-direction: column;
 
@@ -16,19 +17,20 @@
         height: 30px;
         padding-left: 12px;
         padding-right: 34px;
-        font-family: Roboto;
-        font-size: 14px;
-        background: #69656500;
+        font-family: Inter;
+        font-size: 12px;
         border-radius: 6px;
         border-width: 1px;
         border-color: #565D6DFF;
-        outline: none;
+        background-color: #69656500;
+        color: #ffffff;
     }
 
     .react-datepicker {
-        border: none;
+        border-color: #565D6DFF;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-        font-family: Arial, sans-serif;
+        font-family: Inter;
+
 
         &__header {
             background-color: #f0f0f0;
@@ -42,20 +44,17 @@
         }
 
         &__navigation {
-            top: 20px;
-
-            &--previous {
-                left: 20px;
-            }
-
-            &--next {
-                right: 20px;
-            }
+            top: 15px;
         }
 
         &__input-container {
             input {
                 color: #ffffff;
+            }
+
+            input::placeholder {
+                color: #ffffff;
+
             }
         }
     }

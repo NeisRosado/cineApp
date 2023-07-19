@@ -6,8 +6,8 @@ const Cinemas = () => {
 
     return (
         <div className="cinemas">
-            <span>Cines cercanos </span>
-            <select>
+            <span className='cinemas__span'>Cines cercanos </span>
+            <select className='cinemas__select'>
                 {cinemas.map((cinema, index) => (
                     <option key={index} value={cinema}>
                         {cinema}

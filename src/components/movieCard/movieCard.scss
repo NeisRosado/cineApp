@@ -1,0 +1,58 @@
+@import "/src/assets/styles/universals.scss";
+@import "/src/assets/styles/variables.scss";
+
+.figure {
+    width: 100%;
+    height: 400px;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        padding: 10px;
+        width: 100%;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(24, 23, 23, 0.6);
+
+
+        &__title {
+            font-size: 18px;
+            font-family: Inter;
+            color: white;
+        }
+
+        &__span {
+            display: block;
+            font-family: Inter;
+            font-size: 14px;
+            color: white;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.04);
+        z-index: 1;
+
+    }
+
+}
+
+.carousel-container {
+    width: 100%;
+    background-color: black;
+}
+
+.slick-list {
+    display: flex;
+}
