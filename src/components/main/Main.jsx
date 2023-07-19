@@ -1,9 +1,33 @@
-import React from 'react'
+
+import React, { useState, useEffect } from 'react';
+import { fetchMoviesAndGenres } from '../../services/getApi';
+import Movies from '../movies/Movies';
+
 
 const Main = () => {
-  return (
-    <div>Main</div>
-  )
-}
+  const [movies, setMovies] = useState([]);
+  const [genres, setGenres] = useState([]);
 
-export default Main
+  useEffect(() => {
+    const fetchData = async () => {
+      const { movies, genres } = await fetchMoviesAndGenres();
+      setMovies(movies);
+      setGenres(genres);
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <>
+      <h3 className="cardTitle">EN CARTELERA</h3>
+      <div className='containerCards'>
+        {movies.map((movie) => (
+          <Movies key={movie.id} movie={movie} genres={genres} />
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default Main;

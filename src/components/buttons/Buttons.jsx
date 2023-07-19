@@ -4,7 +4,7 @@ import './buttons.scss'
 
 const Buttons = () => {
     const buttonsList = [
-        'Acción', 'Terror', 'Ciencia Ficción', 'Comedia'
+        'Acción', 'Aventura', 'Ciencia Ficción', 'Comedia', 'Terror'
     ];
     return (
         <>
