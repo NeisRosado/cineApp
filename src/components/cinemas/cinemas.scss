@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
 
-    span {
+    &__span {
         opacity: 1;
         font-family: Roboto;
         color: #BDC1CAFF;
@@ -12,19 +12,22 @@
         font-weight: bold;
     }
 
-    select {
+    &__select {
         height: 30px;
         padding-left: 12px;
         padding-right: 34px;
-        font-family: Roboto;
-        font-size: 14px;
-        background: #69656500;
+        font-family: Inter;
+        font-size: 12px;
         border-radius: 6px;
         border-width: 1px;
         border-color: #565D6DFF;
-        outline: none;
-        color: #ffffff;
-   
+        background-color: #69656500;
+        color: #ffffff;  
+    }
+
+    &__select option {
+        background-color: white; 
+        color: black; 
     }
 
 

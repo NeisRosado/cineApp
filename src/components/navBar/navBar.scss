@@ -7,36 +7,26 @@
     align-items: center;
     padding: 35px;
     background-color: black;
-
+   
     &__logo {
         display: flex;
         align-items: center;
         gap: 5px;
-
-
         &__img {
-            // position: absolute;
-            //  top: 47px;
-            left: 31px;
             width: 42px;
             height: 31px;
             border-radius: 6px;
         }
-
         &__text {
-            //position: absolute;
-            // top: 52px;
             left: 78px;
             font-family: Inter;
             font-size: 14px;
             line-height: 22px;
             color: #BDC1CAFF;
-
         }
-      
     }
-    &__avatar{
-        width: 36px;
-        }
-
+   
+    &__avatar {
+        width: 40px;
+    }
 }
