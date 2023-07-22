@@ -15,9 +15,7 @@ const MovieCard = ({ movie, genres }) => {
         <h3 className="figure__content__title">{title}</h3>
         <span className="figure__content__span">Título en inglés: {original_title}</span>
         <span className="figure__content__span">Estreno: {release_date}</span>
-        {/* <span className="figure__content__span">Duración: {runtime} minutos</span> */}
         <span className="figure__content__span">Género: {genre_ids.map((genreId) => getGenreName(genreId)).join(', ')}</span>
-        {/* <span className="figure__content__span">Clasificación: {adult ? 'Para adultos' : 'Para todos los públicos'}</span> */}
       </div>
     </figure>
   );

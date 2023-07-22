@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchMoviesAndGenres } from '../../services/getApi';
 import Movies from '../movies/Movies';
 
-const Main = ({ selectedGenre }) => {
+const Main = ({ selectedGenre, selectedCinema }) => {
   const [movies, setMovies] = useState([]);
   const [genres, setGenres] = useState([]);
 
@@ -17,16 +17,23 @@ const Main = ({ selectedGenre }) => {
   }, []);
 
   const filteredMovies = movies.filter((movie) => {
-        if (!selectedGenre) {
-      return true;
+    // Filtrar por género
+    if (selectedGenre && (!movie.genre_ids || !movie.genre_ids.includes(selectedGenre))) {
+      return false;
     }
-     return movie.genre_ids && movie.genre_ids.includes(selectedGenre);
+
+    // Filtrar por cine
+    if (selectedCinema && (!movie.cinema_ids || !movie.cinema_ids.includes(selectedCinema))) {
+      return false;
+    }
+
+    return true;
   });
- // console.log("Filtered Movies:", filteredMovies); 
+
   return (
     <>
       <div className="cardTitle">EN CARTELERA</div>
-      <div className='containerCards'>
+      <div className="containerCards">
         {filteredMovies.map((movie) => (
           <Movies key={movie.id} movie={movie} genres={genres} />
         ))}
@@ -36,5 +43,3 @@ const Main = ({ selectedGenre }) => {
 };
 
 export default Main;
-
-
