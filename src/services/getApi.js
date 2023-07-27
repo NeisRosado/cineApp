@@ -90,4 +90,4 @@ export const getVideoAndSynopsis = async (idMovie) => {
     console.error('Error obteniendo los datos:', error);
     return { video: null, synopsis: null };
   }
-};
+}

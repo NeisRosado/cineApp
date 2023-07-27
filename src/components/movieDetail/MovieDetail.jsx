@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getVideoAndSynopsis } from '../../services/getApi';
 import Trailer from '../trailer/Trailer';
+import Footer from '../footer/Footer';
 
 const MovieDetail = () => {
     const { idMovie } = useParams();
@@ -26,6 +27,7 @@ const MovieDetail = () => {
         <>
             <Header />
             <Trailer />
+            <Footer/>
 
         </>
     )
