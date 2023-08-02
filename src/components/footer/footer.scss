@@ -1,22 +1,25 @@
 @import "/src/assets/styles/universals.scss";
 @import "/src/assets/styles/variables.scss";
-@mixin mobile {
-    @media (max-width: 800px) {
-      @content;
-    }
-}
 .footer{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: black;
     padding: 5px;
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    @include desktop {
+        flex-direction: row;
+        justify-content: space-around;
+    }
     &__logo{
         display: flex;
         align-items: center;
         gap: 5px;
         justify-content: center;
-        padding: 10px 5px;
+        padding: 3px 5px 0 0;
         &__img {
             // position: absolute;
             //  top: 47px;
