@@ -1,18 +1,20 @@
 @import "/src/assets/styles/universals.scss";
 @import "/src/assets/styles/variables.scss";
-@mixin mobile {
-    @media (max-width: 800px) {
-      @content;
-    }
-}
+
 button {
   width: auto; 
   height: auto; 
   background: #1C508DFF; 
   border-radius: 19px;  
   border: none ;
-  margin: 1px 5px;
-  padding: 10px 20px;
+  margin: 0.2vw 0.3vw;
+  padding: .6vw 1.1vw;
+  @include mobile {
+    display: none;
+  }
+  @include tablet {
+      margin: 0.9vw 2vw;
+  }
 }
 
 
