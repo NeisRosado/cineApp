@@ -1,21 +1,26 @@
-import React from 'react'
-import './buttons.scss'
+import React from 'react';
+import './buttons.scss';
 
+const Buttons = ({ onGenreClick }) => {
+  const buttonsList = [
+    { id: 28, name: 'Acción' },
+    { id: 12, name: 'Aventura' },
+    { id: 878, name: 'Ciencia Ficción' },
+    { id: 35, name: 'Comedia' },
+    { id: 27, name: 'Terror' },
+  ];
 
-const Buttons = () => {
-    const buttonsList = [
-        'Acción', 'Aventura', 'Ciencia Ficción', 'Comedia', 'Terror'
-    ];
-    return (
-        <>
-        <div>
-            {buttonsList.map((categories,  index) => (
-                <button key={index} className='text'>{categories} </button>
-            )
-            )}
-        </div>
-        </>
-    )
-}
+  return (
+    <>
+      <div>
+        {buttonsList.map((category) => (
+          <button key={category.id} onClick={() => onGenreClick(category.id)} className='text'>
+            {category.name}
+          </button>
+        ))}
+      </div>
+    </>
+  );
+};
 
-export default Buttons
+export default Buttons;
