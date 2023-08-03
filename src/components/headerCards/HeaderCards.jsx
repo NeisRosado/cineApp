@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchMoviesAndGenres } from '../../services/getApi';
+import { fetchMoviesAndGenres } from '../../services/getMovies';
 import MovieCard from '../movieCard/MovieCard';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

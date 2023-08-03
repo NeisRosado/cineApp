@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getVideoAndSynopsis } from '../../services/getApi';
+import { getVideoAndSynopsis } from '../../services/getVideo';
 import './trailer.scss';
 
 const Trailer = () => {

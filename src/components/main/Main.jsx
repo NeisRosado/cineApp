@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchMoviesAndGenres } from '../../services/getApi';
+import { fetchMoviesAndGenres } from '../../services/getMovies';
 import Movies from '../movies/Movies';
+import Swal from 'sweetalert2';
 
-const Main = ({ selectedGenre, selectedCinema }) => {
+const Main = ({ selectedGenre, selectedCinema, selectedDate }) => {
   const [movies, setMovies] = useState([]);
   const [genres, setGenres] = useState([]);
   const navigate = useNavigate();
@@ -37,7 +38,13 @@ const Main = ({ selectedGenre, selectedCinema }) => {
   });
 
   const handleMovieClick = (movieId) => {
-    navigate(`/details/${movieId}`);
+    if (!selectedCinema) {
+      // Mostrar SweetAlert2 para seleccionar cine y fecha
+      Swal.fire('¡Atención!', 'Selecciona un cine', 'warning');
+      } else {
+      // Si el cine y la fecha están seleccionados, redirigir a la página de detalles
+      navigate(`/details/${movieId}`);
+    }
   };
 
   return (
