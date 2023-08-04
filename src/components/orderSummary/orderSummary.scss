@@ -1,0 +1,74 @@
+/* OrderSummary.scss */
+
+.order-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .ticket-counter {
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  .ticket-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .ticket-type span {
+    font-size: 16px;
+  }
+  
+  .ticket-type button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .order-summary__details {
+    width: 55%;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  .order-summary__details h2 {
+    margin-bottom: 10px;
+  }
+  
+  .total {
+    margin-top: 20px;
+  }
+  
+  .total h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .total p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .continue-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  
+  .continue-button:hover {
+    background-color: #0056b3;
+  }
+  
