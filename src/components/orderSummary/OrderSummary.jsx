@@ -1,62 +1,96 @@
 import React, { useState } from 'react';
 import './OrderSummary.scss';
 
-const OrderSummary = ({ selectedShowtime }) => {
+const OrderSummary = () => {
   const [adultTickets, setAdultTickets] = useState(0);
   const [childTickets, setChildTickets] = useState(0);
   const [seniorTickets, setSeniorTickets] = useState(0);
 
-  const adultPrice = 10; // Precio del boleto para adultos
-  const childPrice = 5; // Precio del boleto para niños
-  const seniorPrice = 7; // Precio del boleto para adultos mayores
+  const adultPrice = 18000;
+  const childPrice = 12000;
+  const seniorPrice = 10000;
 
-  // Función para calcular el total de la compra
   const calculateTotal = () => {
-    return adultTickets * adultPrice + childTickets * childPrice + seniorTickets * seniorPrice;
+    return adultTickets + childTickets + seniorTickets;
   };
 
+  const canContinue = calculateTotal() > 0 && calculateTotal() <= 10;
+
   return (
-    <div className='order-summary'>
-      <div className='ticket-counter'>
-        <h2>Contador de boletos</h2>
-        <div className='ticket-type'>
-          <span>Adulto (Precio: ${adultPrice})</span>
-          <button onClick={() => setAdultTickets(adultTickets + 1)}>+</button>
-          <span>{adultTickets}</span>
-          <button onClick={() => setAdultTickets(Math.max(adultTickets - 1, 0))}>-</button>
+    <div className='counter'>
+      <div className='counter__ticket'>
+        <h2>Selecciona tus boletos</h2>
+        <p>Puede comprar hasta 10 boletos en total por transacción</p>
+        <div className='counter__ticket__type'>
+          <div className='span'>ADULTO</div>
+          <div className='price'>
+            ${adultPrice}
+          </div>
+          <div className='btn-container'>
+            <button className='minus-button' onClick={() => setAdultTickets(Math.max(adultTickets - 1, 0))} disabled={adultTickets === 0}>
+              -
+            </button>
+            <div>{adultTickets}</div>
+            <button className='plus-button' onClick={() => setAdultTickets(adultTickets + 1)} disabled={calculateTotal() >= 10}>
+              +
+            </button>
+          </div>
         </div>
-        <div className='ticket-type'>
-          <span>Niño (Precio: ${childPrice})</span>
-          <button onClick={() => setChildTickets(childTickets + 1)}>+</button>
-          <span>{childTickets}</span>
-          <button onClick={() => setChildTickets(Math.max(childTickets - 1, 0))}>-</button>
+        <div className='counter__ticket__type'>
+          <div className='span'>NIÑOS </div>
+          <div className='price'>
+            ${childPrice}
+          </div>
+          <div className='btn-container'>
+            <button className='minus-button' onClick={() => setChildTickets(Math.max(childTickets - 1, 0))} disabled={childTickets === 0}>
+              -
+            </button>
+            <div>{childTickets}</div>
+            <button className='plus-button' onClick={() => setChildTickets(childTickets + 1)} disabled={calculateTotal() >= 10}>
+              +
+            </button>
+          </div>
         </div>
-        <div className='ticket-type'>
-          <span>Adulto Mayor (Precio: ${seniorPrice})</span>
-          <button onClick={() => setSeniorTickets(seniorTickets + 1)}>+</button>
-          <span>{seniorTickets}</span>
-          <button onClick={() => setSeniorTickets(Math.max(seniorTickets - 1, 0))}>-</button>
+        <div className='counter__ticket__type'>
+          <div className='span'>3 EDAD </div>
+          <div className='price'>
+            ${seniorPrice}
+          </div>
+          <div className='btn-container'>
+
+            <button className='minus-button' onClick={() => setSeniorTickets(Math.max(seniorTickets - 1, 0))} disabled={seniorTickets === 0}>
+              -
+            </button>
+            <div>{seniorTickets}</div>
+
+            <button className='plus-button' onClick={() => setSeniorTickets(seniorTickets + 1)} disabled={calculateTotal() >= 10}>
+              +
+            </button>
+
+          </div>
+
         </div>
       </div>
-
+      
       <div className='movie-details'>
-        {selectedShowtime && (
-          <>
-            <h2>Detalles de la película</h2>
-            <p>Película: {selectedShowtime.movie.title}</p>
-            <p>Cine: {selectedShowtime.cinema.name}</p>
-            <p>Horario: {selectedShowtime.time}</p>
-          </>
-        )}
-
         <div className='total'>
-          <h3>Total de la compra</h3>
-          <p>${calculateTotal()}</p>
-          <p>IVA (19%): ${(calculateTotal() * 0.19).toFixed(2)}</p>
-          <p>Total a pagar: ${(calculateTotal() * 1.19).toFixed(2)}</p>
+          <h3>Resumen de compra </h3>
+
+          <div>
+            <span>Aquí va el componente de detalles de la peli</span>
+          </div>
+
+          <span> Se realizará un cargo por servicio por cada boleto dentro de la orden. </span>
+          <br />
+          <br />
+          <p>Total(IVA incluido): ${(adultTickets * adultPrice + childTickets * childPrice + seniorTickets * seniorPrice) * 1.19}</p>
+
         </div>
 
-        <button className='continue-button'>Continuar</button>
+        <button className={`continue-button ${canContinue ? 'enabled' : ''}`} disabled={!canContinue}>
+          Continuar
+        </button>
+
       </div>
     </div>
   );
