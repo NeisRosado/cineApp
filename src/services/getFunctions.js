@@ -19,8 +19,8 @@ export const getFunctionsWithDetails = async () => {
         ...func,
         cinema: cinema || null,
         showtimes: func.showtimes?.map((showtime) => ({
-          start_date: showtime.start_date,
-          end_date: showtime.end_date,
+          start_date: new Date(`${showtime.start_date}`), 
+          end_date: new Date(`${showtime.end_date}`),     
           time: showtime.time,
           ticketsSold: showtime.tickets_sold,
           totalTickets: showtime.total_tickets,
@@ -32,11 +32,10 @@ export const getFunctionsWithDetails = async () => {
         })) || [],
       };
     });
-
+   
     return functionsWithDetails;
   } catch (error) {
     console.error('Error obteniendo los detalles de las funciones:', error);
     return [];
   }
 };
-

@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchMoviesAndGenres } from '../../services/getMovies';
 import Movies from '../movies/Movies';
 import Swal from 'sweetalert2';
+import { DateContext } from '../calendar/Calendar';
 
-const Main = ({ selectedGenre, selectedCinema, selectedDate }) => {
+const Main = ({ selectedGenre, selectedCinema }) => {
+  const { selectedDate } = useContext(DateContext); 
+  console.log('fecha en main', selectedDate);
   const [movies, setMovies] = useState([]);
   const [genres, setGenres] = useState([]);
+  const [selectedFunctionDate, setSelectedFunctionDate] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -38,11 +42,14 @@ const Main = ({ selectedGenre, selectedCinema, selectedDate }) => {
   });
 
   const handleMovieClick = (movieId) => {
-    if (!selectedCinema) {
-      // Mostrar SweetAlert2 para seleccionar cine y fecha
+    if (!selectedCinema && !selectedDate) {
+      Swal.fire('¡Atención!', 'Selecciona cinema y fecha', 'warning');
+    } else if (!selectedCinema) {
       Swal.fire('¡Atención!', 'Selecciona un cine', 'warning');
-      } else {
-      // Si el cine y la fecha están seleccionados, redirigir a la página de detalles
+    } else if (!selectedDate) {
+      Swal.fire('¡Atención!', 'Selecciona una fecha', 'warning');
+    } else {
+      setSelectedFunctionDate(selectedDate);
       navigate(`/details/${movieId}`);
     }
   };

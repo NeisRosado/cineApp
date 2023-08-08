@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
 import './movieFunctions.scss';
+import { DateContext } from '../calendar/Calendar'; 
+import { useNavigate } from 'react-router-dom';
+import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
 
 const MovieFunctions = ({ functionsWithDetails }) => {
+  const { selectedDate } = useContext(DateContext); 
   const [selectedShowtime, setSelectedShowtime] = useState(null);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleShowtimeClick = (showtime) => {
     setSelectedShowtime(showtime);
@@ -16,13 +20,17 @@ const MovieFunctions = ({ functionsWithDetails }) => {
     }
   };
 
+  console.log('fecha en movieFunctions', selectedDate);
+
   return (
     <figure className='functions'>
       {functionsWithDetails.map((func) => (
         <div key={func.id} className='functions__container'>
           {func.cinema && (
             <>
-              <h5 className='functions__title'>Horarios disponibles - 08 de Agosto </h5>
+             {selectedDate && (
+                <h5 className='functions__title'>Horarios disponibles - {format(selectedDate, 'd MMMM yyyy', { locale: es })}</h5>
+              )}
               <h6 className='functions__title'>Elige el horario que prefieras</h6>
               <span className='functions__title'>{func.cinema.name}</span>
               <br />
