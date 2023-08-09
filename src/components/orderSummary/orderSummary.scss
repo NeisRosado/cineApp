@@ -1,0 +1,135 @@
+@import "/src/assets/styles/universals.scss";
+@import "/src/assets/styles/variables.scss";
+
+// .counter {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   padding: 20px;
+
+//   &__ticket {
+//     display: flex;
+//     flex-direction: column;
+//     margin: 20px;
+//     width: 40%;
+//     padding: 20px;
+//     gap: 20px;
+
+//     h2 {
+//       font-family: Roboto;
+//       font-size: 24px;
+//       line-height: 36px;
+//       color: #171A1FFF;
+//     }
+
+//     &__type {
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+
+//       .price {
+//         font-family: Roboto;
+//         font-size: 16px;
+//         line-height: 26px;
+//         color: #171A1FFF;
+//       }
+
+//     }
+
+//     p {
+//       font-family: Roboto;
+//       font-size: 18px;
+//       line-height: 28px;
+//       color: #303236FF;
+//     }
+
+//     .span {
+//       width: 60px;
+//       font-family: Inter;
+//       font-size: 16px;
+//       line-height: 26px;
+//       color: #565D6DFF;
+//     }
+
+//     button {
+//       border: none;
+//       cursor: pointer;
+//       padding: 5px 10px;
+//       font-size: 16px;
+//       border-radius: 5px;
+
+//     }
+
+//     button.plus-button {
+//       color: #FFFFFFFF;
+//       background-color: #000667FF;
+//       border-radius: 6px;
+//     }
+
+//     button.minus-button {
+//       color: #565D6DFF;
+//       background-color: #F3F4F6FF;
+//       border-radius: 6px;
+
+//     }
+//   }
+
+// }
+
+.movie__details {
+  width: 45%;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background: #F4F4F4FF;
+  border-radius: 6px;
+  box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f;
+}
+
+.total {
+  margin-top: 20px;
+  line-height: 35px;
+
+  span {
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 28px;
+    color: #303236FF;
+  }
+
+  h3 {
+    font-family: Epilogue;
+    font-size: 24px;
+    line-height: 36px;
+    color: #171A1FFF;
+  }
+
+  p {
+    font-family: Inter;
+    font-size: 18px;
+    line-height: 28px;
+    color: #171A1FFF;
+  }
+
+}
+
+.continue-button {
+  background: #C2C3D0FF;
+  border-radius: 28px;
+  box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: not-allowed;
+  font-size: 15px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+  width: 95%;
+
+}
+
+.continue-button.enabled {
+  background: #000667FF;
+  cursor: pointer;
+}
+
+

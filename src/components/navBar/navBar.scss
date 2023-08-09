@@ -1,0 +1,43 @@
+@import "/src/assets/styles/universals.scss";
+@import "/src/assets/styles/variables.scss";
+
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3vw 3vw 0 3vw;
+    background-color: black;
+   
+@include mobile {
+    padding: 3vw 0vw;
+    gap: 2vw;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@include tablet {
+    padding: 4vw 9vw 0 9vw;
+    flex-wrap: wrap;
+}
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        &__img {
+            width: 42px;
+            height: 31px;
+            border-radius: 6px;
+        }
+        &__text {
+            left: 78px;
+            font-family: Inter;
+            font-size: 14px;
+            line-height: 22px;
+            color: #BDC1CAFF;
+        }
+    }
+   
+    &__avatar {
+        width: 40px;
+    }
+}

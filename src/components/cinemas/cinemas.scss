@@ -1,0 +1,39 @@
+@import "/src/assets/styles/universals.scss";
+@import "/src/assets/styles/variables.scss";
+.cinemas {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &__span {
+        opacity: 1;
+        font-family: Roboto;
+        color: #BDC1CAFF;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    &__select {
+        height: 30px;
+        padding-left: 12px;
+        padding-right: 34px;
+        font-family: Inter;
+        font-size: 12px;
+        border-radius: 6px;
+        border-width: 1px;
+        border-color: #565D6DFF;
+        background-color: #69656500;
+        color: #ffffff; 
+        @include mobile {
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+    }
+
+    &__select option {
+        background-color: white; 
+        color: black; 
+    }
+
+
+}

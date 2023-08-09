@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import NavBar from '../navBar/NavBar';
+import HeaderCards from '../headerCards/HeaderCards';
 
-const Header = () => {
+const Header = ({ onGenreClick, onCinemaClick }) => {
   return (
-    <div>Header</div>
-  )
-}
+    <>
+      <NavBar onGenreClick={onGenreClick} onCinemaClick={onCinemaClick} />
+      <HeaderCards />
+    </>
+  );
+};
 
-export default Header
+export default Header;

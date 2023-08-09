@@ -1,0 +1,14 @@
+@import "/src/assets/styles/universals.scss";
+@import "/src/assets/styles/variables.scss";
+
+@include mobile {
+  $slidesToShow: 1;
+}
+
+@include tablet {
+  $slidesToShow: 3;
+}
+
+@include desktop {
+  $slidesToShow: 5;
+}
