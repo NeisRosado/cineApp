@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './orderSummary.scss';
+import TicketDetail from '../ticketDetail/TicketDetail';
 
 const OrderSummary = ({ total, adultTickets, childTickets, seniorTickets }) => {
   const IVA = 1.19;
@@ -20,6 +21,8 @@ const OrderSummary = ({ total, adultTickets, childTickets, seniorTickets }) => {
     <div className='movie__details'>
       <div className='total'>
         <h3>Resumen de compra</h3>
+        <TicketDetail 
+        ticketCount={adultTickets + childTickets + seniorTickets}/>
         <span>Se realizará un cargo por servicio por cada boleto dentro de la orden.</span>
         <p>Total (IVA incluido): ${(total * IVA)}</p>
       </div>

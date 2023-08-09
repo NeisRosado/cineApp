@@ -7,7 +7,6 @@ import { DateContext } from '../calendar/Calendar';
 
 const Main = ({ selectedGenre, selectedCinema }) => {
   const { selectedDate } = useContext(DateContext); 
-  console.log('fecha en main', selectedDate);
   const [movies, setMovies] = useState([]);
   const [genres, setGenres] = useState([]);
   const [selectedFunctionDate, setSelectedFunctionDate] = useState(null);
