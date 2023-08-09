@@ -1,5 +1,5 @@
 import axios from 'axios';
-const URL_JSON_SERVER = "http://localhost:5000";
+const URL_JSON_SERVER = "https://cineapp-miniback.onrender.com";
 const URL_FUNCTIONS = `${URL_JSON_SERVER}/functions`;
 const URL_CINEMAS = `${URL_JSON_SERVER}/cinemas`;
 
